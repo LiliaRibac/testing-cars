@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function(){
         getSelectedCar().classList.toggle("selected-car");
 
         if((cars.options.length - 1) == cars.selectedIndex) {
+            
             cars.selectedIndex = 0;
         }
         else {

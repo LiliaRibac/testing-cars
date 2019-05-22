@@ -22,6 +22,7 @@ function turnRight(car) {
     turnIt(car, direction, RIGHT);
 }
 
+
 function turnLeft(car) {
     let direction = getDirection(car);
     turnIt(car, direction, LEFT);
@@ -124,6 +125,7 @@ function moveIt(car, direction, cmd){
 }
 
 function getDirection(car) {
+
     var classes = car.className;
 
     var direction = "";
