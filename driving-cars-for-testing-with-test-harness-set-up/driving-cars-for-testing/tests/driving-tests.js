@@ -345,7 +345,7 @@ describe("Driving a Car", function () {
     });
 
     // turnIt
-    describe('TurnIt to the right', function () {
+    describe('turnIt to the right', function () {
         describe('calling turnIt right while facing north', function () {
             it('should turn car from north to east', function () {
 
@@ -368,7 +368,7 @@ describe("Driving a Car", function () {
 
     })
 
-    describe('TurnIt to the left', function () {
+    describe('turnIt to the left', function () {
         describe('calling turnIt left while facing north', function () {
             it('should turn car from north to west', function () {
 
@@ -391,7 +391,7 @@ describe("Driving a Car", function () {
 
     })
 
-    describe('TurnIt to the right', function () {
+    describe('turnIt to the right', function () {
         describe('calling turnIt right while facing south', function () {
             it('should turn car from south to west', function () {
 
@@ -414,7 +414,7 @@ describe("Driving a Car", function () {
 
     })
     
-    describe('TurnIt to the left', function () {
+    describe('turnIt to the left', function () {
         describe('calling turnIt left while facing south', function () {
             it('should turn car from south to east', function () {
 
@@ -437,7 +437,7 @@ describe("Driving a Car", function () {
 
     })
 
-    describe('TurnIt to the right', function () {
+    describe('turnIt to the right', function () {
         describe('calling turnIt right while facing east', function () {
             it('should turn car from east to south', function () {
 
@@ -460,7 +460,7 @@ describe("Driving a Car", function () {
 
     })
 
-    describe('TurnIt to the left', function () {
+    describe('turnIt to the left', function () {
         describe('calling turnIt left while facing east', function () {
             it('should turn car from east to north', function () {
 
@@ -483,7 +483,7 @@ describe("Driving a Car", function () {
 
     })
 
-    describe('TurnIt to the right', function () {
+    describe('turnIt to the right', function () {
         describe('calling turnIt right while facing west', function () {
             it('should turn car from west to north', function () {
 
@@ -506,7 +506,7 @@ describe("Driving a Car", function () {
 
     })
     
-    describe('TurnIt to the left', function () {
+    describe('turnIt to the left', function () {
         describe('calling turnIt left while facing west', function () {
             it('should turn car from west to south', function () {
 
@@ -523,6 +523,82 @@ describe("Driving a Car", function () {
                 //ASSERT
                 expect(getDirection(car)).to.equal("SOUTH");
                 expect(car.className).to.equal("car south");
+
+            });
+        });
+
+    })
+
+    describe('getDirection', function () {
+        describe('calling getDirection  while facing north', function () {
+            it('car should return to north', function () {
+
+                //SETUP                
+                    car.className = "car north"
+                               
+                //ACT      
+                getDirection(car);
+
+                //ASSERT
+                expect(getDirection(car)).to.equal("NORTH");
+                expect(car.className).to.equal("car north");
+
+            });
+        });
+
+    })
+
+    describe('getDirection', function () {
+        describe('calling getDirection  while facing south', function () {
+            it('car should return to south', function () {
+
+                //SETUP                
+                    car.className = "car south"
+                               
+                //ACT      
+                getDirection(car);
+
+                //ASSERT
+                expect(getDirection(car)).to.equal("SOUTH");
+                expect(car.className).to.equal("car south");
+
+            });
+        });
+
+    })
+
+    describe('getDirection', function () {
+        describe('calling getDirection  while facing east', function () {
+            it('car should return to east', function () {
+
+                //SETUP                
+                    car.className = "car east"
+                               
+                //ACT      
+                getDirection(car);
+
+                //ASSERT
+                expect(getDirection(car)).to.equal("EAST");
+                expect(car.className).to.equal("car east");
+
+            });
+        });
+
+    })
+
+    describe('getDirection', function () {
+        describe('calling getDirection  while facing west', function () {
+            it('car should return to west', function () {
+
+                //SETUP                
+                    car.className = "car west"
+                               
+                //ACT      
+                getDirection(car);
+
+                //ASSERT
+                expect(getDirection(car)).to.equal("WEST");
+                expect(car.className).to.equal("car west");
 
             });
         });
