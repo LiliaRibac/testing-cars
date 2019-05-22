@@ -218,7 +218,7 @@ describe("Driving a Car", function () {
 
     });
 
-    
+
     //turnLeft
     describe("turnLeft", function () {
 
@@ -318,27 +318,26 @@ describe("Driving a Car", function () {
             });
         });
 
+    });
 
-    // });
+    // addCar
+    describe("addCar", function () {
+        describe("calling addCar ", function () {
+            it("should  be able to addCar", function () {
+                //ASSERT
+                expect(addCar()).to.match(/c[0-9]/);
+            });
+        });
+    });
 
-    // // addCar
-    // describe("addCar", function () {
-    //     describe("calling addCar ", function () {
-    //         it("should  be able to addCar", function () {
-    //             //ASSERT
-    //             expect(addCar()).to.match(/c[0-9]/);
-    //         });
-    //     });
-    // });
-
-    // //randomCarArtId
-    // describe("randomCarArtId", function () {
-    //     describe("calling randomCar ", function () {
-    //         it("should be able to add randomCar", function () {
-    //             //ASSERT
-    //             expect(randomCarArtId()).to.match(/car[0-9]/);
-    //         })
-    //     })
+    //randomCarArtId
+    describe("randomCarArtId", function () {
+        describe("calling randomCar ", function () {
+            it("should be able to add randomCar", function () {
+                //ASSERT
+                expect(randomCarArtId()).to.match(/car[0-9]/);
+            })
+        })
 
     })
 
@@ -444,8 +443,70 @@ describe("Driving a Car", function () {
                     expect(car.style.top).to.equal("0px");
                 })
             })
+
+
         })
     });
+
+    //reverse
+
+    describe("reverse", function () {
+        describe("calling direction reverse", function () {
+            describe("reverse north", function () {
+
+                it("car should reverse north", function () {
+                    //SETUP
+                    car.style.top = "0px";
+                    car.style.left = "0px";
+
+                    //ACT      
+                    moveIt(car, "NORTH", "REVERSE");
+
+                    //ASSERT
+                    expect(car.style.top).to.equal("10px");
+                })
+            })
+            describe("reverse south", function () {
+                it("car should reverse south", function () {
+                    //SETUP
+                    car.style.top = "0px";
+                    car.style.left = "0px";
+
+                    //ACT      
+                    moveIt(car, "SOUTH", "REVERSE");
+
+                    //ASSERT
+                    expect(car.style.top).to.equal("-10px");
+                })
+            })
+            describe("reverse east", function () {
+                it("car should reverse east", function () {
+                    //SETUP
+                    car.style.top = "0px";
+                    car.style.left = "0px";
+
+                    //ACT      
+                    moveIt(car, "EAST", "REVERSE");
+
+                    //ASSERT
+                    expect(car.style.top).to.equal("0px");
+                })
+            })
+            describe("reverse west", function () {
+                it("car should reverse west", function () {
+                    //SETUP
+                    car.style.top = "0px";
+                    car.style.left = "0px";
+
+                    //ACT      
+                    moveIt(car, "WEST", "REVERSE");
+
+                    //ASSERT
+                    expect(car.style.top).to.equal("0px");
+                })
+            })
+        })
+    })
 
     // turnIt
     describe('turnIt to the right', function () {
@@ -516,7 +577,7 @@ describe("Driving a Car", function () {
         });
 
     })
-    
+
     describe('turnIt to the left', function () {
         describe('calling turnIt left while facing south', function () {
             it('should turn car from south to east', function () {
@@ -608,7 +669,7 @@ describe("Driving a Car", function () {
         });
 
     })
-    
+
     describe('turnIt to the left', function () {
         describe('calling turnIt left while facing west', function () {
             it('should turn car from west to south', function () {
@@ -637,8 +698,8 @@ describe("Driving a Car", function () {
             it('car should return to north', function () {
 
                 //SETUP                
-                    car.className = "car north"
-                               
+                car.className = "car north"
+
                 //ACT      
                 getDirection(car);
 
@@ -656,8 +717,8 @@ describe("Driving a Car", function () {
             it('car should return to south', function () {
 
                 //SETUP                
-                    car.className = "car south"
-                               
+                car.className = "car south"
+
                 //ACT      
                 getDirection(car);
 
@@ -675,8 +736,8 @@ describe("Driving a Car", function () {
             it('car should return to east', function () {
 
                 //SETUP                
-                    car.className = "car east"
-                               
+                car.className = "car east"
+
                 //ACT      
                 getDirection(car);
 
@@ -694,8 +755,8 @@ describe("Driving a Car", function () {
             it('car should return to west', function () {
 
                 //SETUP                
-                    car.className = "car west"
-                               
+                car.className = "car west"
+
                 //ACT      
                 getDirection(car);
 

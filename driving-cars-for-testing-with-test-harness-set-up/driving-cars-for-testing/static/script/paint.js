@@ -6,6 +6,7 @@ function addCar() {
     car.id = "c" + carCount;
     car.style.top = '0px';
     car.style.left = '0px';
+    
     car.className = 'car east ' + randomCarArtId();
     document.getElementsByTagName('body')[0].appendChild(car);
 
