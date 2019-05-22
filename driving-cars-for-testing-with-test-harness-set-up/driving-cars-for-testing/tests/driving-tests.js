@@ -218,24 +218,127 @@ describe("Driving a Car", function () {
 
     });
 
-    // addCar
-    describe("addCar", function () {
-        describe("calling addCar ", function () {
-            it("should  be able to addCar", function () {
+    
+    //turnLeft
+    describe("turnLeft", function () {
+
+        describe("calling turnLeft while facing north", function () {
+            it("should move car from north to west", function () {
+                //SETUP
+
+                car.className = "car north";
+                car.classList = [];
+                car.classList.add = function () {
+                    car.className = "car west"
+                };
+
+                car.classList.toggle = function () {
+
+                }
+                //ACT
+                turnLeft(car);
+
                 //ASSERT
-                expect(addCar()).to.match(/c[0-9]/);
+                expect(getDirection(car)).to.equal("WEST");
+                expect(car.className).to.equal("car west");
+
+
             });
         });
-    });
 
-    //randomCarArtId
-    describe("randomCarArtId", function () {
-        describe("calling randomCar ", function () {
-            it("should be able to add randomCar", function () {
+        describe("calling turnLeft while facing east", function () {
+            it("should move car from east to north", function () {
+                //SETUP
+
+                car.className = "car east";
+                car.classList = [];
+                car.classList.add = function () {
+                    car.className = "car north"
+                };
+
+                car.classList.toggle = function () {
+
+                }
+                //ACT
+                turnLeft(car);
+
                 //ASSERT
-                expect(randomCarArtId()).to.match(/car[0-9]/);
-            })
-        })
+                expect(getDirection(car)).to.equal("NORTH");
+                expect(car.className).to.equal("car north");
+
+
+            });
+        });
+
+        describe("calling turnLeft while facing south", function () {
+            it("should move car from south to east", function () {
+                //SETUP
+
+                car.className = "car south";
+                car.classList = [];
+                car.classList.add = function () {
+                    car.className = "car east"
+                };
+
+                car.classList.toggle = function () {
+
+                }
+                //ACT
+                turnLeft(car);
+
+                //ASSERT
+                expect(getDirection(car)).to.equal("EAST");
+                expect(car.className).to.equal("car east");
+
+
+            });
+        });
+
+        describe("calling turnLeft while facing west", function () {
+            it("should move car from west to south", function () {
+                //SETUP
+
+                car.className = "car west";
+                car.classList = [];
+                car.classList.add = function () {
+                    car.className = "car south"
+                };
+
+                car.classList.toggle = function () {
+
+                }
+                //ACT
+                turnLeft(car);
+
+                //ASSERT
+                expect(getDirection(car)).to.equal("SOUTH");
+                expect(car.className).to.equal("car south");
+
+
+            });
+        });
+
+
+    // });
+
+    // // addCar
+    // describe("addCar", function () {
+    //     describe("calling addCar ", function () {
+    //         it("should  be able to addCar", function () {
+    //             //ASSERT
+    //             expect(addCar()).to.match(/c[0-9]/);
+    //         });
+    //     });
+    // });
+
+    // //randomCarArtId
+    // describe("randomCarArtId", function () {
+    //     describe("calling randomCar ", function () {
+    //         it("should be able to add randomCar", function () {
+    //             //ASSERT
+    //             expect(randomCarArtId()).to.match(/car[0-9]/);
+    //         })
+    //     })
 
     })
 
