@@ -167,8 +167,6 @@ describe("Driving a Car", function () {
             });
         });
 
-
-
         describe("calling turnRight while facing south", function () {
             it("should move car from south to west", function () {
                 //SETUP
@@ -346,7 +344,8 @@ describe("Driving a Car", function () {
         })
     });
 
-    describe('TurnIt to right', function () {
+    // turnIt
+    describe('TurnIt to the right', function () {
         describe('calling turnIt right while facing north', function () {
             it('should turn car from north to east', function () {
 
@@ -368,6 +367,169 @@ describe("Driving a Car", function () {
         });
 
     })
+
+    describe('TurnIt to the left', function () {
+        describe('calling turnIt left while facing north', function () {
+            it('should turn car from north to west', function () {
+
+                //SETUP
+                car.className = "car north";
+                car.classList = [];
+                car.classList.add = function () {
+                    car.className = "car west"
+                };
+                car.classList.toggle = function () {}
+                //ACT      
+                turnIt(car, "NORTH", "LEFT");
+
+                //ASSERT
+                expect(getDirection(car)).to.equal("WEST");
+                expect(car.className).to.equal("car west");
+
+            });
+        });
+
+    })
+
+    describe('TurnIt to the right', function () {
+        describe('calling turnIt right while facing south', function () {
+            it('should turn car from south to west', function () {
+
+                //SETUP
+                car.className = "car south";
+                car.classList = [];
+                car.classList.add = function () {
+                    car.className = "car west"
+                };
+                car.classList.toggle = function () {}
+                //ACT      
+                turnIt(car, "SOUTH", "RIGHT");
+
+                //ASSERT
+                expect(getDirection(car)).to.equal("WEST");
+                expect(car.className).to.equal("car west");
+
+            });
+        });
+
+    })
+    
+    describe('TurnIt to the left', function () {
+        describe('calling turnIt left while facing south', function () {
+            it('should turn car from south to east', function () {
+
+                //SETUP
+                car.className = "car south";
+                car.classList = [];
+                car.classList.add = function () {
+                    car.className = "car east"
+                };
+                car.classList.toggle = function () {}
+                //ACT      
+                turnIt(car, "SOUTH", "LEFT");
+
+                //ASSERT
+                expect(getDirection(car)).to.equal("EAST");
+                expect(car.className).to.equal("car east");
+
+            });
+        });
+
+    })
+
+    describe('TurnIt to the right', function () {
+        describe('calling turnIt right while facing east', function () {
+            it('should turn car from east to south', function () {
+
+                //SETUP
+                car.className = "car east";
+                car.classList = [];
+                car.classList.add = function () {
+                    car.className = "car south"
+                };
+                car.classList.toggle = function () {}
+                //ACT      
+                turnIt(car, "EAST", "RIGHT");
+
+                //ASSERT
+                expect(getDirection(car)).to.equal("SOUTH");
+                expect(car.className).to.equal("car south");
+
+            });
+        });
+
+    })
+
+    describe('TurnIt to the left', function () {
+        describe('calling turnIt left while facing east', function () {
+            it('should turn car from east to north', function () {
+
+                //SETUP
+                car.className = "car east";
+                car.classList = [];
+                car.classList.add = function () {
+                    car.className = "car north"
+                };
+                car.classList.toggle = function () {}
+                //ACT      
+                turnIt(car, "EAST", "LEFT");
+
+                //ASSERT
+                expect(getDirection(car)).to.equal("NORTH");
+                expect(car.className).to.equal("car north");
+
+            });
+        });
+
+    })
+
+    describe('TurnIt to the right', function () {
+        describe('calling turnIt right while facing west', function () {
+            it('should turn car from west to north', function () {
+
+                //SETUP
+                car.className = "car west";
+                car.classList = [];
+                car.classList.add = function () {
+                    car.className = "car north"
+                };
+                car.classList.toggle = function () {}
+                //ACT      
+                turnIt(car, "WEST", "RIGHT");
+
+                //ASSERT
+                expect(getDirection(car)).to.equal("NORTH");
+                expect(car.className).to.equal("car north");
+
+            });
+        });
+
+    })
+    
+    describe('TurnIt to the left', function () {
+        describe('calling turnIt left while facing west', function () {
+            it('should turn car from west to south', function () {
+
+                //SETUP
+                car.className = "car west";
+                car.classList = [];
+                car.classList.add = function () {
+                    car.className = "car south"
+                };
+                car.classList.toggle = function () {}
+                //ACT      
+                turnIt(car, "WEST", "LEFT");
+
+                //ASSERT
+                expect(getDirection(car)).to.equal("SOUTH");
+                expect(car.className).to.equal("car south");
+
+            });
+        });
+
+    })
+
+
 
 
     /// EXAMPLE SYNTAX BELOW
