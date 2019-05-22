@@ -4,7 +4,7 @@ describe("Driving a Car", function () {
 
     let sandbox; //added
     let car;
-    // const MOVE_VALUE = 10;
+   
 
     beforeEach(function () {
         // create a sandbox
