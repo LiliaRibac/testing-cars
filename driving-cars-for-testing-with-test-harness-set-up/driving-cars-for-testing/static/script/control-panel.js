@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 function getSelectedCar(cars) {
     let car = document.querySelector("#" + cars[cars.selectedIndex].value);
+
     return car;
 }
 

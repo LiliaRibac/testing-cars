@@ -4,7 +4,7 @@ describe("Car Controls", function () {
 
     let sandbox; //added
     let carsSelectElement;
-   
+
 
     beforeEach(function () {
         // create a sandbox
@@ -15,13 +15,6 @@ describe("Car Controls", function () {
         //sandbox.stub(window.console, "error");
 
         carsSelectElement = document.createElement('select')
-
-        // stub document query selector
-            // should return the cars select element mocked
-
-        // stub document create element
-            // 
-
         //mocing complex objects such as DOM
         //https://codeutopia.net/blog/2016/05/23/sinon-js-quick-tip-how-to-stubmock-complex-objects-such-as-dom-objects/
 
@@ -34,7 +27,7 @@ describe("Car Controls", function () {
         sandbox.restore();
     });
 
-    //FORWARD
+    //cars
     describe("Create", function () {
         it("should add a new car option to the cars select element", function () {
             //ACT
@@ -44,4 +37,34 @@ describe("Car Controls", function () {
             expect(carsSelectElement.childElementCount).to.equal(1);
         })
     })
+    // turn-right
+    describe("Selected Car turn-right", function () {
+        it("Should return the selected car", function () {
+            //ACT
+            newCarAndUpdateUi(carsSelectElement)
+
+            let selectedCar = getSelectedCar(carsSelectElement)
+            turnRight(selectedCar)
+
+            //ASSERT
+            expect(selectedCar.className.includes('south')).to.equal(true);
+            // test the return car
+        })
+       
+    })
+    //  // turn-right
+    //  describe("Selected Car turn-right", function () {
+    //     it("Should return the selected car", function () {
+    //         //ACT
+    //         newCarAndUpdateUi(carsSelectElement)
+
+    //         let selectedCar = getSelectedCar(carsSelectElement)
+    //         turnRight(selectedCar)
+
+    //         //ASSERT
+    //         expect(selectedCar.className.includes('south')).to.equal(true);
+    //         // test the return car
+    //     })
+       
+    // })
 });
