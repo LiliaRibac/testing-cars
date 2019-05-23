@@ -1,6 +1,6 @@
 var expect = chai.expect;
 
-describe("Car Controls", function () {
+describe("Button testing", function () {
 
     let sandbox; //added
     let carsSelectElement;
@@ -18,8 +18,8 @@ describe("Car Controls", function () {
     });
 
     //cars
-    describe("Create button that will have the function of creating a new car", function () {
-        it("add a new car by pressing the button", function () {
+    describe("Create button that will have the functionality of creating a new car", function () {
+        it("add a new car by clicking on the button", function () {
             //ACT
             newCarAndUpdateUi(carsSelectElement)
 
@@ -28,8 +28,8 @@ describe("Car Controls", function () {
         })
     })
     // turn-right
-    describe("Create button that will have the function of turn-right a car", function () {
-        it("turn-right a car by pressing the button", function () {
+    describe("Create button that will have the functionality of turn-right a car", function () {
+        it("turn-right a car by clicking on the button", function () {
             //ACT
             newCarAndUpdateUi(carsSelectElement)
 
@@ -44,8 +44,8 @@ describe("Car Controls", function () {
 
     })
      // turn-left
-     describe("Create button that will have the function of turn-left a car", function () {
-        it("turn-left a car by pressing on button", function () {
+     describe("Create button that will have the functionality of turn-left a car", function () {
+        it("turn-left a car by clicking on the button", function () {
             //ACT
             newCarAndUpdateUi(carsSelectElement)
 
@@ -61,8 +61,8 @@ describe("Car Controls", function () {
     })
 
     // forward
-    describe("Create button that will have the function moving a car forward ", function () {
-        it("move a car forward by pressing on button", function () {
+    describe("Create button that will have the functionality moving a car forward ", function () {
+        it("move a car forward by clicking on the button", function () {
             //ACT
             newCarAndUpdateUi(carsSelectElement)
 
@@ -78,8 +78,8 @@ describe("Car Controls", function () {
     })
 
      // reverse
-     describe("Create button that will have the function to reverse a car ", function () {
-        it("reverse a car by presing on button ", function () {
+     describe("Create button that will have the functionality to reverse a car ", function () {
+        it("reverse a car by clicking on the button ", function () {
             //ACT
             newCarAndUpdateUi(carsSelectElement)
 
