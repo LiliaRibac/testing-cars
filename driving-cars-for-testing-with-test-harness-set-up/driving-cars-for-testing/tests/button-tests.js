@@ -9,27 +9,17 @@ describe("Car Controls", function () {
     beforeEach(function () {
         // create a sandbox
         sandbox = sinon.sandbox.create();
-
-        // stub some console methods
-        //sandbox.stub(window.console, "log");
-        //sandbox.stub(window.console, "error");
-
         carsSelectElement = document.createElement('select')
-        //mocing complex objects such as DOM
-        //https://codeutopia.net/blog/2016/05/23/sinon-js-quick-tip-how-to-stubmock-complex-objects-such-as-dom-objects/
 
-        //mocking document load
-        //https://stackoverflow.com/questions/43083419/karma-mocha-how-to-test-method-that-listens-to-domcontentloaded-event/43474345
     });
 
     afterEach(function () {
-        // restore the environment as it was before
         sandbox.restore();
     });
 
     //cars
-    describe("Create", function () {
-        it("should add a new car option to the cars select element", function () {
+    describe("Create button that will have the function of creating a new car", function () {
+        it("add a new car by pressing the button", function () {
             //ACT
             newCarAndUpdateUi(carsSelectElement)
 
@@ -38,33 +28,69 @@ describe("Car Controls", function () {
         })
     })
     // turn-right
-    describe("Selected Car turn-right", function () {
-        it("Should return the selected car", function () {
+    describe("Create button that will have the function of turn-right a car", function () {
+        it("turn-right a car by pressing the button", function () {
             //ACT
             newCarAndUpdateUi(carsSelectElement)
 
             let selectedCar = getSelectedCar(carsSelectElement)
             turnRight(selectedCar)
 
+            console.log(turnRight)
             //ASSERT
             expect(selectedCar.className.includes('south')).to.equal(true);
             // test the return car
         })
-       
+
     })
-    //  // turn-right
-    //  describe("Selected Car turn-right", function () {
-    //     it("Should return the selected car", function () {
-    //         //ACT
-    //         newCarAndUpdateUi(carsSelectElement)
+     // turn-left
+     describe("Create button that will have the function of turn-left a car", function () {
+        it("turn-left a car by pressing on button", function () {
+            //ACT
+            newCarAndUpdateUi(carsSelectElement)
 
-    //         let selectedCar = getSelectedCar(carsSelectElement)
-    //         turnRight(selectedCar)
+            let selectedCar = getSelectedCar(carsSelectElement)
+            turnLeft(selectedCar)
+           // console.log(selectedCar)
 
-    //         //ASSERT
-    //         expect(selectedCar.className.includes('south')).to.equal(true);
-    //         // test the return car
-    //     })
-       
-    // })
+            //ASSERT
+            expect(selectedCar.className.includes('north')).to.equal(true);
+            // test the return car
+        })
+
+    })
+
+    // forward
+    describe("Create button that will have the function moving a car forward ", function () {
+        it("move a car forward by pressing on button", function () {
+            //ACT
+            newCarAndUpdateUi(carsSelectElement)
+
+            let selectedCar = getSelectedCar(carsSelectElement)
+            forward(selectedCar)
+            console.log(selectedCar)
+
+            //ASSERT
+            expect(selectedCar.className.includes('east')).to.equal(true);
+            // test the return car
+        })
+
+    })
+
+     // reverse
+     describe("Create button that will have the function to reverse a car ", function () {
+        it("reverse a car by presing on button ", function () {
+            //ACT
+            newCarAndUpdateUi(carsSelectElement)
+
+            let selectedCar = getSelectedCar(carsSelectElement)
+            reverse(selectedCar)
+            console.log(selectedCar)
+
+            //ASSERT
+            expect(selectedCar.className.includes('west')).to.equal(false);
+            // test the return car
+        })
+
+    })
 });
